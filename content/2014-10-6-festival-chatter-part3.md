@@ -1,5 +1,6 @@
 date: '2014-10-06'
 layout: post
+slug: festival-chatter-part3
 title: Festival Chatter (Part 3) - Bonnaroo Analysis in the Fourth Dimension
 
 In this series of posts ([part 1]({filename}/2014-08-31-festival-chatter-part1.md), [part 2]({filename}/2014-09-09-festival-chatter-part2.md)), I have been showing how to use Python and other data scientist tools to analyze a collection of tweets related to the 2014 Bonnaroo Music and Arts Festival. So far, the investigation has been limited to summary data of the full dataset. The beauty of Twitter is that it occurs in realtime, so we can now peer into the fourth dimension and learn about these tweets as a function of time.

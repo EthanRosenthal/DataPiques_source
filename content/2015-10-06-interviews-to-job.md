@@ -1,5 +1,6 @@
 date: '2015-10-06'
 layout: post
+slug: interviews-to-job
 title: Yet Another PhD to Data Science Post (Part III)
 
 This is the final part in my series on going from PhD to Data Science (parts [I]({{page.previous.previous.url}}) and [II]({{page.previous.url}})). As previously mentioned, while I was demoing my Insight project at companies, I also spent a good bit of time studying for interviews. The technical areas of study for interviews can be largely grouped as

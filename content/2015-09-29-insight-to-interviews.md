@@ -1,5 +1,6 @@
 date: '2015-09-29'
 layout: post
+slug: insight-to-interviews
 title: Yet Another PhD to Data Science Post (Part II)
 
 Welcome to Part II of my journey from academic to industry data scientist. In my previous [post]({{page.previous.url}}), I wrote of my preparation leading up to the application to <a href="http://www.insightdatascience.com" target="_blank">Insight Data Science</a>. I will now talk about the Insight application process, the actual program, and demoing my project at companies. I will save studying for interviews and the actual interview process for the final [post]({{page.next.url}}).

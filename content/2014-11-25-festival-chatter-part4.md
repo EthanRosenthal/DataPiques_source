@@ -1,5 +1,6 @@
 date: '2014-11-25'
 layout: post
+slug: festival-chatter-part4
 title: Festival Chatter (Part 4) - Some Simple Sentiment Analysis
 
 I think this post will probably conclude my Festival Chatter series on analyzing Bonnaroo tweets in Python ([part 1]({filename}/2014-08-31-festival-chatter-part1.md), [part 2]({filename}/2014-09-09-festival-chatter-part2.md), [part 3]({filename}/2014-10-6-festival-chatter-part3.md)). I've had a lot of fun messing around with this dataset, but I think it's time to move on to playing with something else. For this last post, though, I will show some simple [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of the collected tweets. There are a whole bunch of issues with this method of sentiment analysis. I'll mention some of these after presenting the findings.

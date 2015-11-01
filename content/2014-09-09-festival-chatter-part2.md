@@ -1,5 +1,6 @@
 date: '2014-09-09'
 layout: post
+slug: festival-chatter-part2
 title: Festival Chatter (Part 2) - Evaluating Band Popularity from Bonnaroo Tweets
 
 In my previous [post]({filename}/2014-08-31-festival-chatter-part1.md), I wrote about how I collected tweets about the Bonnaroo Music and Arts Festival during the entirety of the festival. There are a wide range of questions that could be answered by this dataset, like
