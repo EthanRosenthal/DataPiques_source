@@ -9,7 +9,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'EST'
+TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
