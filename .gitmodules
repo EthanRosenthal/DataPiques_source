@@ -4,7 +4,3 @@
 [submodule "blue-penguin"]
 	path = blue-penguin
 	url = git@github.com:EthanRosenthal/blue-penguin.git
-[submodule "output"]
-	path = output
-	url = git@github.com:EthanRosenthal/DataPiques.git
-        ignore = all
