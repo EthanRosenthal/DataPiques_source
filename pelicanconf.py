@@ -63,6 +63,11 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 
+PAGINATION_PATTERNS = (
+    (1, '{base_name}/', '{base_name}/index.html'),
+    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+)
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
@@ -71,4 +76,3 @@ MENUITEMS = [('Archives', '/archives.html'),
              ('About', '/pages/about.html'),
              ('Website', 'http://www.ethanrosenthal.com')]
 DISPLAY_PAGES_ON_MENU = False
-
