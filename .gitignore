@@ -3,3 +3,4 @@
 output
 _build
 _nb_header.html
+*.ipynb_checkpoints
