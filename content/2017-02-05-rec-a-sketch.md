@@ -1,7 +1,7 @@
 date: '2017-02-05'
 layout: post
 slug: rec-a-sketch
-title: Rec-a-Sketch: a Flask App for Interactive Sketchfab Recommendations¶
+title: Rec-a-Sketch: a Flask App for Interactive Sketchfab Recommendations
 
 {% notebook 2017-02-05-rec-a-sketch.ipynb language[python]%}
 
