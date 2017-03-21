@@ -8,6 +8,6 @@ My name is Ethan Rosenthal, and I am a data scientist at [Dia&Co](https://www.di
 
 For more information about my academic research, check out my [website](http://ethanrosenthal.com).
 
-I enjoy public speaking: I've given invited talks at physics conferences and will be participating in two panel discussions in Fall 2016 on data science hiring and industrial [machine intelligence](https://re-work.co/events/machine-intelligence-summit-usa-2016). I'm always happy to hear about speaking opportunities, so feel free to reach out to me on email at *firstnamelastname*@gmail.com (where you replace these with my real name).
+Feel free to reach out to me on email at *firstnamelastname*@gmail.com (where you replace these with my real name).
 
 [github](https://github.com/EthanRosenthal) | [linkedin](https://www.linkedin.com/in/ethanrosenthal) | [twitter](https://twitter.com/eprosenthal)
