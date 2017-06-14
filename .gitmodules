@@ -1,6 +1,9 @@
 [submodule "pelican-plugins"]
-	path = pelican-plugins
+	path = plugins/pelican-plugins
 	url = git@github.com:EthanRosenthal/pelican-plugins.git
 [submodule "blue-penguin"]
 	path = blue-penguin
 	url = git@github.com:EthanRosenthal/blue-penguin.git
+[submodule "plugins/ipynb"]
+	path = plugins/ipynb
+	url = git://github.com/danielfrg/pelican-ipynb.git
