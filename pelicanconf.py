@@ -19,7 +19,13 @@ THEME_JUPYTER = True
 THEME_PYGMENTS = True
 THEME_MATHJAX = True
 
-STATIC_PATHS = ['assets','CNAME']
+STATIC_PATHS = ['assets', 'extras', 'CNAME']
+
+EXTRA_PATH_METADATA = {
+    'extras/CNAME': {'path': 'CNAME'},
+}
+
+ARTICLE_EXCLUDES = ['extras']
 
 IPYNB_IGNORE_CSS=True
 

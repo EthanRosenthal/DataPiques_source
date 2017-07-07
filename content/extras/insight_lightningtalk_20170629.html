@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PyTorch Rapid Prototyping</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      @page {
+        size: 1210px 681px;
+        margin: 0;
+      }
+
+      @media print {
+        .remark-slide-scaler {
+          width: 100% !important;
+          height: 100% !important;
+          transform: scale(1) !important;
+          top: 0 !important;
+          left: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    #### Rapid Prototyping without the Math in PyTorch (Note: there will be math)
+    ##### A Case Study in Matrix Factorization
+
+    - Goal: Given known user-item ratings (< 1%), predict all missing entries.
+    - Each user `\(u\)` has k unknown numbers that describe them, `\(\textbf{x}_{u}\)`
+    - Each item `\(i\)` has k unknown numbers that describe it,  `\(\textbf{y}_{i}\)`
+    - Our model says that a user's predicted rating will be 
+      - `\(r_{ui} =  \textbf{x}_{u}^{\intercal}  \cdot \textbf{y}_{i}\)`
+    - How do we do this with math? Oh, it's a fucking pain.
+
+    1. Define Loss (MSE)
+      -  `\(L = \sum\limits_{u,i \in S}(r_{ui} - \textbf{x}_{u}^{\intercal} \cdot{} \textbf{y}_{i})^{2}\)`
+    2. Pick an optimization method (Vanilla SGD)
+      -  `\(\textbf{x}_{u} \leftarrow \textbf{x}_{u} - \eta \frac{\partial L}{\partial \textbf{x}_{u}}\)`
+
+    3. Calculate the gradients
+      - `\(\frac{\partial L}{\partial \textbf{x}_{u}} = 2(r_{ui} - (\textbf{x}_{u}^{\intercal} \cdot{} \textbf{y}_{i}))(-\textbf{y}_{i})\)`
+    4. Update
+      - `\(\textbf{x}_{u} \leftarrow \textbf{x}_{u} - \eta \, 2(r_{ui} - (\textbf{x}_{u}^{\intercal} \cdot{} \textbf{y}_{i}))(-\textbf{y}_{i})\)`
+
+    ---
+
+    #### Want to change *anything*? Recalculate *everything*
+
+    e.g. adding regularization, bias terms, momentum, etc...
+
+    #### Enter PyTorch
+
+    ```python
+    import torch
+    from torch.autograd import Variable
+
+    class MatrixFactorization(torch.nn.Module):
+        def __init__(self, n_users, n_items, n_factors=20):
+            super().__init__()
+            self.user_factors = torch.nn.Embedding(n_users, n_factors)
+            self.item_factors = torch.nn.Embedding(n_items, n_factors)
+        def forward(self, user, item):
+            return (self.user_factors(user) * self.item_factors(item)).sum(1)
+
+    model = MatrixFactorization(ratings.shape[0], ratings.shape[1])
+    loss_func = torch.nn.MSELoss()
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+    ratings = torch.from_numpy(ratings)
+    for pair in ratings.nonzero():
+        rating = Variable(torch.FloatTensor([ratings[pair[0], pair[1]]]))
+        pair = Variable(pair)
+        prediction = model.forward(pair[0], pair[1])
+        loss = loss_func(prediction, rating)
+        loss.backward()
+        optimizer.step()
+    ```
+
+    ---
+
+    #### Want to change *anything*? Go ahead
+
+    - Add regularization
+
+    ```python
+    loss_func = torch.nn.MSELoss(weight_decay=1e-6)
+    ```
+
+    - Add user bias term
+
+    ```python
+    class MatrixFactorization(torch.nn.Module):
+        def __init__(self, n_users, n_items, n_factors=20):
+            super().__init__()
+            self.user_factors = torch.nn.Embedding(n_users, n_factors)
+            self.item_factors = torch.nn.Embedding(n_items, n_factors)
+            self.user_bias = torch.nn.Embeddings(n_users, 1)
+        def forward(self, user, item):
+            return (self.user_bias(user) 
+                    + (self.user_factors(user) * self.item_factors(item)).sum(1))
+    ```
+
+    - Add momentum
+
+    ```python
+    loss_func = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+    ```
+
+    - More info
+      - [http://blog.ethanrosenthal.com/2017/06/20/matrix-factorization-in-pytorch/](http://blog.ethanrosenthal.com/2017/06/20/matrix-factorization-in-pytorch/)
+      - [https://github.com/EthanRosenthal/torchmf](https://github.com/EthanRosenthal/torchmf)
+      - [https://github.com/maciejkula/netrex](https://github.com/maciejkula/netrex)
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+      });
+
+      MathJax.Hub.Configured();
+    </script>
+  </body>
+</html>
