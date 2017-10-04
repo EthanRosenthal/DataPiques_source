@@ -3,7 +3,7 @@ layout: post
 slug: interviews-to-job
 title: Yet Another PhD to Data Science Post (Part III)
 
-This is the final part in my series on going from PhD to Data Science (parts [I]({{page.previous.previous.url}}) and [II]({{page.previous.url}})). As previously mentioned, while I was demoing my Insight project at companies, I also spent a good bit of time studying for interviews. The technical areas of study for interviews can be largely grouped as
+This is the final part in my series on going from PhD to Data Science (parts [I]({filename}/2015-09-23-start-to-insight.md) and [II]({filename}/2015-09-29-insight-to-interviews.md)). As previously mentioned, while I was demoing my Insight project at companies, I also spent a good bit of time studying for interviews. The technical areas of study for interviews can be largely grouped as
 
 - Computer Science (CS)
 - Machine Learning (ML)

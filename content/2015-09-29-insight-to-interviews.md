@@ -3,13 +3,13 @@ layout: post
 slug: insight-to-interviews
 title: Yet Another PhD to Data Science Post (Part II)
 
-Welcome to Part II of my journey from academic to industry data scientist. In my previous [post]({{page.previous.url}}), I wrote of my preparation leading up to the application to <a href="http://www.insightdatascience.com" target="_blank">Insight Data Science</a>. I will now talk about the Insight application process, the actual program, and demoing my project at companies. I will save studying for interviews and the actual interview process for the final [post]({{page.next.url}}).
+Welcome to Part II of my journey from academic to industry data scientist. In my previous [post]({filename}/2015-09-23-start-to-insight.md), I wrote of my preparation leading up to the application to <a href="http://www.insightdatascience.com" target="_blank">Insight Data Science</a>. I will now talk about the Insight application process, the actual program, and demoing my project at companies. I will save studying for interviews and the actual interview process for the final [post]({filename}/2015-10-06-interviews-to-job.md).
 
 ## Application to Insight
 
 The Insight written application is fairly straightforward. I went for the shotgun approach - I wrote everything that I could for each of the entry boxes hoping that something would stick. I think it's important to actually *have* something to enter into each of the boxes. If they ask for a link to your LinkedIn page, then you should have a filled out LinkedIn page.
 
-After making it past the first round, I was invited to do a Skype interview. I was tasked with sharing my screen and walking the interviewer through an interesting project of mine. One should try to show off as many "industrial data science" tools as possible during this stage. It may be tempting to pick a research project because it shows your smarts, but this is likely ill-advised unless said project uses lots of relevant Python or R. I chose to walk though some of my [Festival Chatter]({% post_url 2014-08-31-festival-chatter-part1 %}) project for which I created an IPython Notebook to show execution of various scripts and to produce some plots. This was a better suited talk than any of my research could have been (it's hard to get people excited about nematic fluctuations in superconductors).
+After making it past the first round, I was invited to do a Skype interview. I was tasked with sharing my screen and walking the interviewer through an interesting project of mine. One should try to show off as many "industrial data science" tools as possible during this stage. It may be tempting to pick a research project because it shows your smarts, but this is likely ill-advised unless said project uses lots of relevant Python or R. I chose to walk though some of my [Festival Chatter]({filename}/2014-08-31-festival-chatter-part1.md}) project for which I created an IPython Notebook to show execution of various scripts and to produce some plots. This was a better suited talk than any of my research could have been (it's hard to get people excited about nematic fluctuations in superconductors).
 
 It should also be noted that your communication skills are likely being judged during this interview. I know this because listening to the other fellows give talks at Insight was night-and-day better than any scientific conference that I have ever been too.
 
@@ -64,4 +64,4 @@ The companies were given our resumes at the demos and were encouraged to later c
 
 ## Studying
 
-In between demoing and frantically checking email to see if any companies got back to us, we studied for interviews. But I'll talk about that [next]({{page.next.url}}) time
+In between demoing and frantically checking email to see if any companies got back to us, we studied for interviews. But I'll talk about that [next]({filename}/2015-10-06-interviews-to-job.md) time
