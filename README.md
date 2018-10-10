@@ -1,2 +1,2 @@
 # DataPiques_source
-Source for blog.ethanrosenthal.com
+Source code for old pelican blog
